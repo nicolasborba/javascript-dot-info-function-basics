@@ -1,14 +1,18 @@
 function pow(x, n) {
 
-  let result = 0;
+  let result = 1;
 
-  if (n <= 0) {
-    return result;
+  if (n < 1) {
+    return "error, please use a positive number";
+  } else if (!Number.isInteger(n)) {
+
+    return "error, please use an integer";
+
   } else {
 
     result = x;
 
-    for (let z = n; z > 0; z--) {
+    for (let z = n; z > 1; z--) {
 
       result *= x;
 
@@ -21,3 +25,7 @@ function pow(x, n) {
 
 }
 
+let x = prompt("x value?");
+let n = prompt("n value?");
+
+alert(pow(x, n));
